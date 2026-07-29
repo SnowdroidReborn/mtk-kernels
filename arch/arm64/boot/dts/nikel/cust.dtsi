@@ -371,6 +371,13 @@
 		reg = <0x0c>;
 		status = "okay";
 	};
+	bmi160@68 {
+		compatible = "bosch,bmi160";
+		reg = <0x68>;
+		interrupt-parent = <&pio>;
+		interrupts = <12 IRQ_TYPE_LEVEL_LOW 12 0>;
+		status = "okay";
+	};
 	gyro@69 {
 		compatible = "mediatek,gyro";
 		reg = <0x69>;
