@@ -56,7 +56,7 @@
 		status = "okay";
 	};
 	gyro@69 {
-		compatible = "mediatek,gyro";
+		compatible = "mediatek,bmi160_gyro";
 		reg = <0x69>;
 		status = "okay";
 	};

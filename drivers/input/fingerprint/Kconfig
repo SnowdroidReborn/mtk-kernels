@@ -37,20 +37,18 @@ config NB_FINGER_CLEAR_SUPPORT
         bool "NB FINGER CLEAR SUPPORT"
         default n
         
-if MTK_FINGERPRINT_SELECT = "FPC1145"
+if MTK_FINGERPRINT_SELECT = "GF316M GF318M GF3118M GF518M GF5118M GF516M GF3208 GF5216 FPC1145"
 config FPC_FINGERPRINT
 	bool "FPC Fingerprint"
 	default y
 	---help---
 	FPC fingerprint FPC's 102x/104x device.
-endif
 
-if MTK_FINGERPRINT_SELECT = "GF318M"
 config GOODIX_FINGERPRINT
 	bool "Goodix Fingerprint"
 	default y
 	---help---
-	Goodix Fingerprint chip GF516/GF318GF316M/GF616M/GF318M TEE driver
+	Goodix Fingerprint chip GF516/GF318/GF316M/GF616M/GF318M TEE driver
 
 endif
 endif

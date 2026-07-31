@@ -242,6 +242,17 @@
 		firlen					= <0>;
 		is_batch_supported		= <0>;
 	};
+	
+	cust_accel@1 {
+		compatible = "mediatek,lsm6ds3_acc";
+		direction = <0x02>;
+		firlen = <0x00>;
+		i2c_addr = <0x6a 0x00 0x00 0x00>;
+		i2c_num = <0x01>;
+		is_batch_supported = <0x00>;
+		power_id = <0xffff>;
+		power_vol = <0x00>;
+	};
 
 	cust_alsps@0 {
 		compatible				= "mediatek,cm36558";
@@ -272,8 +283,8 @@
 	cust_gyro@0 {
 		compatible				= "mediatek,bmi160_gyro";
 		i2c_num					= <1>;
-		i2c_addr				= <0x69 0 0 0>;
-		direction				= <3>;
+		i2c_addr				= <0x68 0 0 0>;
+		direction				= <1>;
 		power_id				= <0xffff>;
 		power_vol				= <0>;
 		firlen					= <0>;
@@ -438,13 +449,33 @@
 &spi1 {
 	#address-cells = <1>;
 	#size-cells = <0>;
+	cell-index = <0x01>;
+	clock-div = <0x01>;
+	clock-frequency = <0x67f3540>;
+	clock-names = "spi-main";
+	clocks = <0x02 0x3e>;
+	compatible = "mediatek,mt6797-spi";
+	interrupts = <0x00 0x83 0x08>;
+	pinctrl-0 = <0x3c>;
+	pinctrl-1 = <0x3d>;
+	pinctrl-2 = <0x3e>;
+	pinctrl-3 = <0x3f>;
+	pinctrl-4 = <0x40>;
+	pinctrl-5 = <0x41>;
+	pinctrl-6 = <0x42>;
+	pinctrl-7 = <0x43>;
+	pinctrl-8 = <0x44>;
+	pinctrl-names = "spi1_gpio_def\0spi1_cs_set\0spi1_cs_clr\0spi1_clk_set\0spi1_clk_clr\0spi1_miso_set\0spi1_miso_clr\0spi1_mosi_set\0spi1_mosi_clr";
+	reg = <0x11012000 0x1000>;
+	spi-padmacro = <0x01>;
+	status = "okay";
 
 	fpc1145@0 {
 		compatible = "fpc,fpc1020";
 		reg = <0>;
-		spi-max-frequency = <16000000>;
+		spi-max-frequency = <0xf42400>;
 		/* fpc,gpio_irq = <0>; */
-		fpc,gpio_reset = <256>;
+		fpc,gpio_reset = <0x2b>;
 		/* fpc,gpio_cs = <85>; */
 		/* fpc,vddtx_mv = <3300>;  */
 		/* fpc,txout_boost_enable; */
